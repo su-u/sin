@@ -5,21 +5,21 @@
         <title>Sinカーブ</title>
         <script src="sin.js"></script>
         <script>
-             <!-- 全ファイルを読み込んで準備ができたらここを実行 -->
-            window.addEventListener( "load", function(){
-            		<!-- 周波数1の波 -->
-            		var sindata1 = calc_sin( 1, 1 );
-            		draw_sin( "sin1", sindata1 );
-            		<!-- 周波数2の波 -->
-            		var sindata2 = calc_sin( 2, 1 );
-            		draw_sin( "sin2", sindata2 );
-            		<!-- 周波数1の波と周波数2の波の合成波 -->
-            		var sindata = new Array(360);
-            		for( var i=0; i<360; i++ ) {
-            			sindata[i] = sindata1[i] + sindata2[i];
-            		}
-            		draw_sin( "sin3", sindata );
-            	}, false );
+            window.addEventListener(
+                'load',
+                function() {
+                    var sindata1 = calc_sin(1, 1);
+                    draw_sin('sin1', sindata1);
+                    var sindata2 = calc_sin(2, 1);
+                    draw_sin('sin2', sindata2);
+                    var sindata = new Array(360);
+                    for (var i = 0; i < 360; i++) {
+                        sindata[i] = sindata1[i] + sindata2[i];
+                    }
+                    draw_sin('sin3', sindata);
+                },
+                false
+            );
         </script>
         <link rel="stylesheet" type="text/css" href="sin.css" />
     </head>
