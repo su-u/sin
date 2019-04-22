@@ -5,6 +5,7 @@ draw_sin = function(id, data) {
     var canvas = document.getElementById(id);
     var ctx = canvas.getContext('2d');
 
+    const RAD = 180;
     // 描画
     ctx.beginPath();
     ctx.moveTo(0, 100);

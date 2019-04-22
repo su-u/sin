@@ -8,16 +8,21 @@
             window.addEventListener(
                 'load',
                 function() {
-                    var sindata1 = calc_sin(1, 1);
-                    var sindata2 = calc_sin(2, 1);
-                    var sindata = new Array(360);
+                    var sindata1 = calc_sin(0.5, 1);
+                    var sindata2 = calc_sin(1, 1);
+                    var sindata3 = new Array(360);
                     for (var i = 0; i < 360; i++) {
-                        sindata[i] = sindata1[i] + sindata2[i];
+                        sindata3[i] = sindata1[i] + sindata2[i];
+                    }
+                    var sindata4 = new Array(360);
+                    for (var i = 0; i < 360; i++) {
+                        sindata4[i] = sindata1[i] + sindata3[i];
                     }
 
-                    draw_sin('sin2', sindata2);
                     draw_sin('sin1', sindata1);
-                    draw_sin('sin3', sindata);
+                    draw_sin('sin2', sindata2);
+                    draw_sin('sin3', sindata3);
+                    draw_sin('sin4', sindata4);
                 },
                 false
             );
@@ -29,5 +34,6 @@
         <div>No.1<canvas id="sin1" width="360px" height="200px"></canvas></div>
         <div>No.2<canvas id="sin2" width="360px" height="200px"></canvas></div>
         <div>No.3<canvas id="sin3" width="360px" height="200px"></canvas></div>
+        <div>No.4<canvas id="sin4" width="360px" height="200px"></canvas></div>
     </body>
 </html>
