@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>Sinカーブ</title>
-		<script src="sin.js"></script>
-		<script>
-		  <!-- 全ファイルを読み込んで準備ができたらここを実行 -->
-			window.addEventListener( "load", function(){
-					<!-- 周波数1の波 -->
-					var sindata1 = calc_sin( 1, 1 );
-					draw_sin( "sin1", sindata1 );
-					<!-- 周波数2の波 -->
-					var sindata2 = calc_sin( 2, 1 );
-					draw_sin( "sin2", sindata2 );
-					<!-- 周波数1の波と周波数2の波の合成波 -->
-					var sindata = new Array(360);
-					for( var i=0; i<360; i++ ) {
-						sindata[i] = sindata1[i] + sindata2[i];
-					}
-					draw_sin( "sin3", sindata );
-				}, false );
-		</script>
-		<link rel="stylesheet" type="text/css" href="sin.css">
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sinカーブ</title>
+        <script src="sin.js"></script>
+        <script>
+             <!-- 全ファイルを読み込んで準備ができたらここを実行 -->
+            window.addEventListener( "load", function(){
+            		<!-- 周波数1の波 -->
+            		var sindata1 = calc_sin( 1, 1 );
+            		draw_sin( "sin1", sindata1 );
+            		<!-- 周波数2の波 -->
+            		var sindata2 = calc_sin( 2, 1 );
+            		draw_sin( "sin2", sindata2 );
+            		<!-- 周波数1の波と周波数2の波の合成波 -->
+            		var sindata = new Array(360);
+            		for( var i=0; i<360; i++ ) {
+            			sindata[i] = sindata1[i] + sindata2[i];
+            		}
+            		draw_sin( "sin3", sindata );
+            	}, false );
+        </script>
+        <link rel="stylesheet" type="text/css" href="sin.css" />
+    </head>
 
-	<body>
-		<div>No.1<canvas id="sin1" width="360px" height="200px"></canvas></div>
-		<div>No.2<canvas id="sin2" width="360px" height="200px"></canvas></div>
-		<div>No.3<canvas id="sin3" width="360px" height="200px"></canvas></div>
-	</body>
+    <body>
+        <div>No.1<canvas id="sin1" width="360px" height="200px"></canvas></div>
+        <div>No.2<canvas id="sin2" width="360px" height="200px"></canvas></div>
+        <div>No.3<canvas id="sin3" width="360px" height="200px"></canvas></div>
+    </body>
 </html>
