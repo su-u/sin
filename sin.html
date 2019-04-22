@@ -9,13 +9,14 @@
                 'load',
                 function() {
                     var sindata1 = calc_sin(1, 1);
-                    draw_sin('sin1', sindata1);
                     var sindata2 = calc_sin(2, 1);
-                    draw_sin('sin2', sindata2);
                     var sindata = new Array(360);
                     for (var i = 0; i < 360; i++) {
                         sindata[i] = sindata1[i] + sindata2[i];
                     }
+
+                    draw_sin('sin2', sindata2);
+                    draw_sin('sin1', sindata1);
                     draw_sin('sin3', sindata);
                 },
                 false
