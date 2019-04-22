@@ -5,7 +5,6 @@ draw_sin = function(id, data) {
     var canvas = document.getElementById(id);
     var ctx = canvas.getContext('2d');
 
-    const RAD = 180;
     // 描画
     ctx.beginPath();
     ctx.moveTo(0, 100);
@@ -24,4 +23,12 @@ calc_sin = function(freq, amp) {
         data[i] = amp * Math.sin((freq * i * Math.PI) / 180.0);
     }
     return data;
+};
+
+add_sin = function(data1, data2) {
+    var sindata = new Array(360);
+    for (var i = 0; i < 360; i++) {
+        sindata[i] = data1[i] + data2[i];
+    }
+    return sindata;
 };
