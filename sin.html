@@ -29,18 +29,27 @@
                     }
 
                     var sindata7 = new Array(360);
-                    var sign = 1;
+                    var sign7 = 1;
                     sindata7.fill(0);
                     for (var j = 0; j < 100; j++) {
                         var n = 2 * j + 1;
                         var sindata7 = add_sin(
                             sindata7,
-                            calc_sin(n, sign / (n * n))
+                            calc_sin(n, sign7 / (n * n))
                         );
-                        sign = -sign;
+                        sign7 = -sign7;
                     }
 
-                    draw_sin('sin3', sindata3);
+                    var sindata8 = new Array(360);
+                    var sign8 = 1;
+                    sindata8.fill(0);
+                    for (var k = 0; k < 100; k++) {
+                        var sindata8 = add_sin(
+                            sindata8,
+                            calc_sin(k, (2 * sign8) / k)
+                        );
+                        sign8 = -sign8;
+                    }
 
                     draw_sin('sin1', sindata1);
                     draw_sin('sin2', sindata2);
@@ -49,6 +58,7 @@
                     draw_sin('sin5', sindata5);
                     draw_sin('sin6', sindata6);
                     draw_sin('sin7', sindata7);
+                    draw_sin('sin8', sindata8);
                 },
                 false
             );
@@ -57,12 +67,13 @@
     </head>
 
     <body>
-        <div>No.1<canvas id="sin1" width="360px" height="200px"></canvas></div>
-        <div>No.2<canvas id="sin2" width="360px" height="200px"></canvas></div>
-        <div>No.3<canvas id="sin3" width="360px" height="200px"></canvas></div>
-        <div>No.4<canvas id="sin4" width="360px" height="200px"></canvas></div>
-        <div>No.5<canvas id="sin5" width="360px" height="200px"></canvas></div>
-        <div>No.6<canvas id="sin6" width="360px" height="200px"></canvas></div>
-        <div>No.7<canvas id="sin7" width="360px" height="200px"></canvas></div>
+        <div>No.1<canvas id="sin1"></canvas></div>
+        <div>No.2<canvas id="sin2"></canvas></div>
+        <div>No.3<canvas id="sin3"></canvas></div>
+        <div>No.4<canvas id="sin4"></canvas></div>
+        <div>No.5<canvas id="sin5"></canvas></div>
+        <div>No.6<canvas id="sin6"></canvas></div>
+        <div>No.7<canvas id="sin7"></canvas></div>
+        <div>No.8<canvas id="sin8"></canvas></div>
     </body>
 </html>
