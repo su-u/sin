@@ -3,13 +3,16 @@ draw_sin = function(id, data) {
     // idは描画するCanvas要素の名前
     // dataは数値の入っている配列
     var canvas = document.getElementById(id);
+    canvas.width = 360;
+    canvas.height = 300;
     var ctx = canvas.getContext('2d');
 
     // 描画
     ctx.beginPath();
-    ctx.moveTo(0, 100);
-    for (var i = 0; i < 360; i++) {
-        ctx.lineTo(i, -data[i] * 100.0 + 100);
+    var half = canvas.height / 2;
+    ctx.moveTo(0, half);
+    for (var i = 0; i < canvas.width; i++) {
+        ctx.lineTo(i, -data[i] * 100.0 + half);
     }
     ctx.stroke();
 };
