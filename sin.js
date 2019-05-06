@@ -25,10 +25,15 @@ calc_sin = function(freq, amp) {
     return data;
 };
 
-add_sin = function(data1, data2) {
+add_sin = function(data1, data2, ...data3) {
     var sindata = new Array(360);
     for (var i = 0; i < 360; i++) {
         sindata[i] = data1[i] + data2[i];
     }
+    data3.forEach(function(item) {
+        for (var i = 0; i < 360; i++) {
+            sindata[i] = sindata[i] + item[i];
+        }
+    });
     return sindata;
 };
