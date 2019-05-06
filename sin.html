@@ -28,6 +28,18 @@
                         var sindata6 = add_sin(sindata6, calc_sin(n, 1 / n));
                     }
 
+                    var sindata7 = new Array(360);
+                    var sign = 1;
+                    sindata7.fill(0);
+                    for (var j = 0; j < 100; j++) {
+                        var n = 2 * j + 1;
+                        var sindata7 = add_sin(
+                            sindata7,
+                            calc_sin(n, sign / (n * n))
+                        );
+                        sign = -sign;
+                    }
+
                     draw_sin('sin3', sindata3);
 
                     draw_sin('sin1', sindata1);
@@ -36,6 +48,7 @@
                     draw_sin('sin4', sindata4);
                     draw_sin('sin5', sindata5);
                     draw_sin('sin6', sindata6);
+                    draw_sin('sin7', sindata7);
                 },
                 false
             );
@@ -50,5 +63,6 @@
         <div>No.4<canvas id="sin4" width="360px" height="200px"></canvas></div>
         <div>No.5<canvas id="sin5" width="360px" height="200px"></canvas></div>
         <div>No.6<canvas id="sin6" width="360px" height="200px"></canvas></div>
+        <div>No.7<canvas id="sin7" width="360px" height="200px"></canvas></div>
     </body>
 </html>
