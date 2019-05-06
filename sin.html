@@ -14,12 +14,28 @@
                     sindata3 = add_sin(sindata1, sindata2);
 
                     var sindata4 = add_sin(calc_sin(1, 1), calc_sin(3, 1 / 3));
+                    var sindata5 = add_sin(calc_sin(1, 1), calc_sin(3, 1 / 3));
+                    var sindata5 = add_sin(
+                        calc_sin(1, 1),
+                        calc_sin(3, 1 / 3),
+                        calc_sin(5, 1 / 5)
+                    );
+
+                    var sindata6 = new Array(360);
+                    sindata6.fill(0);
+                    for (var j = 0; j < 100; j++) {
+                        var n = 2 * j + 1;
+                        var sindata6 = add_sin(sindata6, calc_sin(n, 1 / n));
+                    }
+
+                    draw_sin('sin3', sindata3);
 
                     draw_sin('sin1', sindata1);
                     draw_sin('sin2', sindata2);
                     draw_sin('sin3', sindata3);
                     draw_sin('sin4', sindata4);
                     draw_sin('sin5', sindata5);
+                    draw_sin('sin6', sindata6);
                 },
                 false
             );
@@ -33,5 +49,6 @@
         <div>No.3<canvas id="sin3" width="360px" height="200px"></canvas></div>
         <div>No.4<canvas id="sin4" width="360px" height="200px"></canvas></div>
         <div>No.5<canvas id="sin5" width="360px" height="200px"></canvas></div>
+        <div>No.6<canvas id="sin6" width="360px" height="200px"></canvas></div>
     </body>
 </html>
